@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: "ark"
+      docker: {}
+deploy:
+  helm:
+    releases:
+      - name: ark
+        chartPath: ./helm
+        remote: false
+        values:
+          image: ark             

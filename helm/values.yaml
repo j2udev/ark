@@ -1,0 +1,120 @@
+# Default values for ark.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image: ark
+# image: boerngenschmidt/ark-docker:1.5
+imagePullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: "ark"
+fullnameOverride: "ark-survival-evolved"
+
+ark:
+  sessionName: KilledByTheArkitects
+  serverMap: Ragnarok
+  serverPassword: P4SSW0RD
+  adminPassword: P4ssW4RD
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+ports:
+  - containerPort: 27015
+    protocol: UDP
+    name: ark-steam
+  - containerPort: 7777
+    protocol: UDP
+    name: ark-gameclient
+  - containerPort: 7778
+    protocol: UDP
+    name: ark-gamerawudp
+
+volumeMounts:
+  - name: arkgame-persistent-storage
+    mountPath: /ark
+
+volumes:
+  - name: arkgame-persistent-storage
+    persistentVolumeClaim:
+      claimName: arkgame-pv-claim
+
+service:
+  type: ClusterIP
+  ports:
+  - port: 27015
+    targetPort: 27015
+    protocol: UDP
+    name: ark-steam
+  - port: 7777
+    targetPort: 7777
+    protocol: UDP
+    name: ark-gameclient
+  - port: 7778
+    targetPort: 7778
+    protocol: UDP
+    name: ark-gamerawudpport    
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+persistentVolume:
+  accessModes: 
+    - ReadWriteOnce
+  storage: 16Gi
