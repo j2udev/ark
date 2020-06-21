@@ -1,6 +1,7 @@
-FROM turzam/ark:1.3
+FROM boerngenschmidt/ark-docker
 
-ENV GIT_TAG v1.6.53
-ENV CROSSPLAY_FLAG true
+ENV CROSSPLAY true
 
-COPY arkmanager.cfg /ark/home/steam/arkmanager.cfg
+# Copy to 2 places here to account for install and upgrade use cases.
+COPY arkmanager.cfg /home/steam/arkmanager.cfg
+COPY arkmanager.cfg /ark/arkmanager.cfg

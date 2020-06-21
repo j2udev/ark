@@ -11,4 +11,6 @@ deploy:
         chartPath: ./helm
         remote: false
         values:
-          image: ark             
+          image: ark
+        setValues:
+          ark.crossplay: true              

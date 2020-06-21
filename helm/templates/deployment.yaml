@@ -44,11 +44,13 @@ spec:
               value: {{ .Values.ark.sessionName }}
             - name: SERVERMAP
               value: {{ .Values.ark.serverMap }}
+            - name: CROSSPLAY
+              value: {{ .Values.ark.crossplay | quote }}              
 # TODO: PULL THESE FROM A SECRET              
             - name: SERVERPASSWORD
               value: {{ .Values.ark.serverPassword }}
             - name: ADMINPASSWORD
-              value: {{ .Values.ark.adminPassword }}
+              value: {{ .Values.ark.adminPassword }}              
       volumes:
         {{- toYaml .Values.volumes | nindent 8 }}
       {{- with .Values.nodeSelector }}

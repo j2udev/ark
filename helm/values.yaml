@@ -5,7 +5,6 @@
 replicaCount: 1
 
 image: ark
-# image: boerngenschmidt/ark-docker:1.5
 imagePullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -17,6 +16,7 @@ ark:
   serverMap: Ragnarok
   serverPassword: P4SSW0RD
   adminPassword: P4ssW4RD
+  crossplay: false
 
 serviceAccount:
   # Specifies whether a service account should be created
