@@ -13,4 +13,22 @@ deploy:
         values:
           image: ark
         setValues:
-          ark.crossplay: true              
+          ark.crossplay: true
+profiles:
+  - name: prod
+    patches:
+      - op: replace
+        path: /build/artifacts/0
+        value:
+          image: docker.io/j2udevelopment/ark-se
+          docker: {}      
+      - op: replace
+        path: /deploy/helm/releases/0
+        value:
+          name: ark
+          chartPath: ./helm
+          remote: false
+          values:
+            image: docker.io/j2udevelopment/ark-se
+          setValues:
+            ark.crossplay: true                        

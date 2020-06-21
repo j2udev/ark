@@ -61,7 +61,7 @@ volumes:
       claimName: arkgame-pv-claim
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - port: 27015
     targetPort: 27015
