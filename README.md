@@ -84,6 +84,10 @@ Once you've made your symbolic links between your settings and your world, just
 update your settings from this repo when you want to tweak things and commit
 your world updates every so often.
 
+## Mods
+
+TODO
+
 ## Additional Resources
 
 - [Detailed Ark Server Hosting Video](https://www.youtube.com/watch?v=o1dcWkSzGd4)
