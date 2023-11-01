@@ -1,0 +1,1 @@
+start ShooterGameServer.exe "CrystalIsles?SessionName=KilledByTheArkitects?MaxPlayers=10?OverrideOfficialDifficulty=5.0?DifficultyOffset=1.0?AltSaveDirectoryName=CrystalIsles?QueryPort=27015?Port=7777?listen?ShowFloatingDamageText=true" -NoBattlEye -NoTransferFromFiltering -activeevent=none -UseVivox -noundermeshkilling

@@ -1,2 +1,0 @@
-start ShooterGameServer.exe "Fjordur?SessionName=KilledByTheArkitects-Fjordur?MaxPlayers=10?AltSaveDirectoryName=Fjordur?QueryPort=27015?Port=7777?listen -NoBattlEye -NoTransferFromFiltering -noundermeshkilling
-exit

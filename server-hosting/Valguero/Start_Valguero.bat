@@ -1,1 +1,0 @@
-start ShooterGameServer.exe "Valguero_P?SessionName=KilledByTheArkitects?MaxPlayers=10?OverrideOfficialDifficulty=5.0?DifficultyOffset=1.0?AltSaveDirectoryName=Valguero_P?QueryPort=27015?Port=7777?listen?ShowFloatingDamageText=true" -NoBattlEye -NoTransferFromFiltering -activeevent=vday -UseVivox -noundermeshkilling
