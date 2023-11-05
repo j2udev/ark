@@ -94,7 +94,7 @@ Move your `GameUserSettings.ini` and `Game.ini` files to this repo and create a 
 Run powershell as an administrator.
 
 ```powershell
-New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\Config\WindowsServer\GameUserSettings.ini" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\settings\Game.ini"
+New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\Config\WindowsServer\Game.ini" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\settings\Game.ini"
 
 New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\Config\WindowsServer\GameUserSettings.ini" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\settings\GameUserSettings.ini"
 ```
