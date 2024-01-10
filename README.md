@@ -1,4 +1,5 @@
 # Ark Server Hosting
+?ServerPassword=SierraNevada7?ServerAdminPassword=Quantum7 -mods=928708,929800,947033
 
 ## SteamCMD
 
