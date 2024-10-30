@@ -70,7 +70,7 @@ privileges. Examples of backups are shown below.
 
 Move your saved Arks to this repo and set up a symbolic link. Examples below.
 
-#### ASA Symbolic Link
+#### ASA Symbolic Link - save data
 
 Run powershell as an administrator.
 
@@ -78,7 +78,13 @@ Run powershell as an administrator.
 New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\SavedArks\TheIsland_WP" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\TheIsland_WP"
 ```
 
-#### ASE Symbolic Link
+If modifying the ASA files by browsing through steam, your link may look more like this.
+
+```powershell
+New-Item -ItemType SymbolicLink -Path "C:\Program Files (x86)\Steam\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\SavedArks\TheIsland_WP" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\TheIsland_WP"
+```
+
+#### ASE Symbolic Link - save data
 
 Run powershell as an administrator.
 
@@ -90,7 +96,7 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapp
 
 Move your `GameUserSettings.ini` and `Game.ini` files to this repo and create a symbolic link. Examples below.
 
-#### ASA Symbolic Link
+#### ASA Symbolic Link - ini settings
 
 Run powershell as an administrator.
 
@@ -100,7 +106,15 @@ New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapp
 New-Item -ItemType SymbolicLink -Path "C:\Users\Joshua\Desktop\steamcmd\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\Config\WindowsServer\GameUserSettings.ini" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\settings\GameUserSettings.ini"
 ```
 
-#### ASE Symbolic Link
+If modifying the ASA files by browsing through steam, your link may look more like this.
+
+```powershell
+New-Item -ItemType SymbolicLink -Path "C:\Program Files (x86)\Steam\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\Config\WindowsServer\Game.ini" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\settings\Game.ini"
+
+New-Item -ItemType SymbolicLink -Path "C:\Program Files (x86)\Steam\steamapps\common\ARK Survival Ascended Dedicated Server\ShooterGame\Saved\Config\WindowsServer\GameUserSettings.ini" -Target "C:\Users\Joshua\dev\ark\server-hosting\ASA\settings\GameUserSettings.ini"
+```
+
+#### ASE Symbolic Link - ini settings
 
 Run powershell as an administrator.
 
@@ -123,6 +137,7 @@ TODO
 ### ASA
 
 - [TroubleChute's Dedicated Server Guide](https://hub.tcno.co/games/asa/dedicated_server/)
+- [Server Configuration Wiki](https://ark.wiki.gg/wiki/Server_configuration)
 - [Server Configuration Wiki](https://ark.fandom.com/wiki/Server_configuration)
 
 ### ASE
@@ -131,3 +146,12 @@ TODO
 - [Dedicated Server Setup Wiki](https://ark.fandom.com/wiki/Dedicated_server_setup)
 - [Server Configuration Wiki](https://ark.fandom.com/wiki/Server_configuration)
 - [ARK Server Manager](https://steamcommunity.com/sharedfiles/filedetails/?id=468312476)
+
+## Troubleshooting
+
+- If your server won't show in the server explorer, you may need to add this to your GameUserSettings.ini
+
+```txt
+[Internationalization]
+Culture=en
+```
